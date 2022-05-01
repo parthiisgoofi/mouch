@@ -1,0 +1,21 @@
+h3{
+    font-size: 25px;
+}
+
+.btn-success:hover{
+    background-color: red;
+}
+
+canvas{
+    animation-name: nothing;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nothing{
+    0%{box-shadow:1px 1px 38px red;}
+    25%{box-shadow: 1px 1px 38px yellow;}
+    50%{box-shadow: 1px 1px 38px orange;}
+    75%{box-shadow: 1px 1px 38px blue;}
+    100%{box-shadow: 1px 1px 38px greenyellow;}
+}
