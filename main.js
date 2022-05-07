@@ -1,5 +1,8 @@
-function preload(){
+muchhX=0;
+muchhY=0;
 
+function preload(){
+    muchh_image = loadImage("https://i.postimg.cc/3x3QzSGq/m.png");
 }
 
 function setup(){
@@ -14,10 +17,15 @@ function setup(){
 }
 
 function draw(){
-image(video, 0, 0, 300, 300);
+    image(video, 0, 0, 300, 300);
+    fill(255, 0, 0, 0);
+    stroke(255, 0, 0, 0);
+    circle(muchhX,muchhY,0);
+    image(muchh_image, muchhX-15, muchhY+1, 30, 30);
 }
+
 function take_snapshot(){
-    save('my_muchh.png');
+    save('my_Muchh.png');
 }
 
 function modelLoaded(){
@@ -27,7 +35,9 @@ function modelLoaded(){
 function gotPoses(results){
  if (results.length > 0){
      console.log(results);
-     console.log("nose x = " + results[0].pose.nose.x);
-     console.log("nose y = " + results[0].pose.nose.y);
+     console.log("muchh x = " + results[0].pose.nose.x);
+     console.log("muchh y = " + results[0].pose.nose.y);
+     muchhX = results[0].pose.nose.x;
+     muchhY = results[0].pose.nose.y;
  }
 }
